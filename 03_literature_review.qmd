@@ -1,0 +1,19 @@
+---
+title: "Literature Review"
+---
+
+## Health regionalization in Brazil
+
+- Historical background of SUS regionalization
+- Health regions (IBGE / Ministry of Health definitions)
+- Critiques and practical challenges in implementation
+
+## Spatial regionalization methods
+
+- Classical approaches: SKATER, AZP, k-means with contiguity constraints
+- Applications in health: hospital catchment areas, regional health planning studies
+
+## Bayesian and space-time approaches
+
+- Key reference: [Bayesian space-time partitioning by sampling and pruning spanning trees](https://repositorio.ufmg.br/handle/1843/56421)
+- Advantages: explicit uncertainty, robustness to noise, temporal flexibility

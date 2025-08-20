@@ -1,0 +1,9 @@
+---
+title: "References"
+---
+
+- https://lanselin.github.io/introbook_vol2/
+
+::: {#refs}
+
+:::

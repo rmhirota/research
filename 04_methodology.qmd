@@ -1,0 +1,28 @@
+---
+title: "Methodology"
+---
+
+## Data sources
+
+- DataSUS ([opendatasus](https://opendatasus.saude.gov.br/))
+- Tabnet/CNES (hospital resources: beds, equipment, professionals)
+- IBGE (demography data)
+
+## Statistical model
+
+- Graph representation of municipality adjacency
+- Spanning trees and partitioning via pruning
+- Bayesian specification (priors, cohesion functions, parameters).
+- Inference algorithm (Gibbs sampler)
+
+## Software
+
+- R
+  - `[microdatasus]`(https://github.com/rfsaldanha/microdatasus)
+
+## Evaluation strategy
+
+- Compare estimated partitions with official health regions, REGIC 2018
+- Metrics: rand index, Jaccard, F1-score
+- Error measures (MAE, MSE) on aggregated health indicators
+- Visualization: probability maps showing clustering uncertainty, transition zones

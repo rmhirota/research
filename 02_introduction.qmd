@@ -1,0 +1,25 @@
+---
+title: "Introduction"
+---
+
+## Context 
+
+The importance of health regions in the planning of Brazil’s Unified Health System (SUS).
+
+## Current challenges
+
+- heterogeneous criteria
+- politically driven definition
+- limited use of robust statistical methods
+
+## Research problem 
+
+How can we propose a data-driven health regionalization method that accounts for uncertainty and temporal dynamics?
+
+## Objectives
+
+- Apply the Bayesian space-time partitioning model to propose and evaluate health regionalizations in Brazil.
+- Explore health data sources (hospitalizations, health infrastructure, mortality, primary care coverage).
+- Define probabilistic health regions based on these data.
+- Compare estimated regions with official health regions and with the REGIC (IBGE).
+- Discuss implications for health policy and planning.

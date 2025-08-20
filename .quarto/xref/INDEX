@@ -1,0 +1,53 @@
+{
+  "index.qmd": {
+    "index.html": "6eef3fd2"
+  },
+  "abstract.qmd": {
+    "abstract.html": "c8e33f31"
+  },
+  "introduction.qmd": {
+    "introduction.html": "5b5e2e57"
+  },
+  "literature_review.qmd": {
+    "literature_review.html": "e316d644"
+  },
+  "methodology.qmd": {
+    "methodology.html": "823dd1e1"
+  },
+  "results.qmd": {
+    "results.html": "985efcf9"
+  },
+  "discussion.qmd": {
+    "discussion.html": "2d72c121"
+  },
+  "conclusion.qmd": {
+    "conclusion.html": "0c024285"
+  },
+  "references.qmd": {
+    "references.html": "7263f06a"
+  },
+  "01_abstract.qmd": {
+    "01_abstract.html": "307e5ae1"
+  },
+  "02_introduction.qmd": {
+    "02_introduction.html": "0ef58710"
+  },
+  "03_literature_review.qmd": {
+    "03_literature_review.html": "faa4a36b"
+  },
+  "04_methodology.qmd": {
+    "04_methodology.html": "d3caa7b6"
+  },
+  "05_results.qmd": {
+    "05_results.html": "658d6d37"
+  },
+  "06_discussion.qmd": {
+    "06_discussion.html": "cac0082d"
+  },
+  "07_conclusion.qmd": {
+    "07_conclusion.html": "0e1af148"
+  },
+  "08_references.qmd": {
+    "08_references.html": "3bbdcf3a"
+  }
+}
