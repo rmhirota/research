@@ -2,6 +2,7 @@
 title: "WIP"
 author: "Renata Massami Hirota"
 date: "2025"
+bibliography: references.bib
 ---
 
 

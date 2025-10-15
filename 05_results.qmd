@@ -1,5 +1,122 @@
 ---
 title: "Results"
+bibliography: references.bib
 ---
 
+### K-means Implementation
 
+The k-means algorithm will be applied to partition Brazilian municipalities into
+clusters based on health-related indicators. This serves as a baseline method
+for regionalization, providing a simple, well-known clustering approach against
+which more sophisticated models (e.g., Bayesian space-time partitioning) can be
+evaluated.
+
+#### 1. Mathematical Definition
+
+Given a set of $n$ observations $\mathbf{X} = \{x_1, x_2, \ldots, x_n\}
+$, where each $x_i \in \mathbb{R}^d$ is a $d $-dimensional feature
+vector representing health data for a municipality, the k-means algorithm
+partitions the data into $k$ disjoint clusters $C = \{C_1, C_2, \ldots,
+C_k\}$ such that the **within-cluster sum of squares (WCSS)** is minimized:
+
+$$
+\underset{C}{\arg\min} \sum_{j=1}^{k} \sum_{x_i \in C_j} \|x_i - \mu_j\|^2
+$$
+
+where:
+
+- $\mu_j$ is the centroid (mean) of cluster $C_j$, computed as:
+$$
+\mu_j = \frac{1}{|C_j|} \sum_{x_i \in C_j} x_i
+$$
+
+- $\|\cdot\|$ denotes the Euclidean norm.
+
+The objective is to find a partition where municipalities within the same
+cluster are as similar as possible, based on their health profiles.
+
+#### 2. Number of Clusters ($k$)
+
+Choosing the appropriate number of clusters $k$ is crucial. While it can be
+informed by domain knowledge (e.g., number of official health regions), we will
+also use two data-driven methods:
+
+- **Elbow Method**:  
+  Plot the total WCSS as a function of $k$ and look for the "elbow" point
+  where the rate of decrease sharply changes.
+
+- **Silhouette Score**:  
+  For each point, the silhouette score compares the average distance to other
+  points in the same cluster with the average distance to points in the nearest
+  neighboring cluster. The optimal $k$ maximizes the average silhouette
+  score across all points.
+
+#### 3. Initialization of Centroids
+
+- **Random Initialization**:  
+  Select $k$ random observations as initial centroids. This can lead to poor
+  or inconsistent results depending on the starting points.
+
+- **K-means++**:  
+  Improves initialization by choosing the first centroid randomly and the
+  remaining ones probabilistically based on their distance from already selected
+  centroids. This method helps avoid poor clustering outcomes and accelerates
+  convergence.
+
+#### 4. Algorithm Steps
+
+The k-means algorithm follows an iterative procedure:
+
+1. **Initialization**: Choose initial centroids $\mu_1, \ldots, \mu_k$.
+2. **Assignment Step**: Assign each point $x_i$ to the nearest centroid:
+
+$$
+\text{Assign } x_i \text{ to } C_j \text{ where } j = \arg\min_{l \in \{1,
+\ldots, k\}} \|x_i - \mu_l\|^2
+$$
+
+3. **Update Step**: Recalculate each centroid:
+$$
+\mu_j = \frac{1}{|C_j|} \sum_{x_i \in C_j} x_i
+$$
+
+4. **Convergence Check**: Repeat steps 2 and 3 until:
+   - Cluster assignments do not change; or
+   - A maximum number of iterations is reached.
+
+#### 5. Distance Metric
+
+We will use the **Euclidean distance** as the default metric for similarity:
+
+$$
+d(x_i, x_j) = \|x_i - x_j\|_2 = \sqrt{\sum_{l=1}^{d} (x_{il} - x_{jl})^2}
+$$
+
+Since health indicators may be on different scales (e.g., hospital beds vs.
+mortality rates), features will be **standardized** before clustering to ensure
+comparability.
+
+#### 6. **Post-Processing and Evaluation**
+
+After clustering:
+
+- We will **map the clusters spatially** to examine whether the partitions
+  correspond to geographic or administrative patterns.
+- The results will be compared with:
+  - Official health regions (e.g., IBGE-defined or Ministry of Health regions),
+  - REGIC 2018 functional regions.
+
+Evaluation metrics will include:
+
+- **Clustering agreement**:
+  - Rand Index
+  - Jaccard Index
+  - F1-Score
+
+- **Health indicator error measures**:
+  - Mean Absolute Error (MAE)
+  - Mean Squared Error (MSE)
+
+These comparisons will help assess the degree to which k-means can approximate
+existing regional structures and whether it captures relevant patterns in the
+health data.

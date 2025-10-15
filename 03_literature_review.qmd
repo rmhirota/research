@@ -17,3 +17,4 @@ title: "Literature Review"
 
 - Key reference: [Bayesian space-time partitioning by sampling and pruning spanning trees](https://repositorio.ufmg.br/handle/1843/56421)
 - Advantages: explicit uncertainty, robustness to noise, temporal flexibility
+

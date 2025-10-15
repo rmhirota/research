@@ -2,6 +2,8 @@ project:
   type: book
   output-dir: _output
 
+number-depth: 2
+
 book:
   title: "WIP"
   author: "Renata Hirota"
